@@ -11,12 +11,12 @@ public class FindIDDriver {
     public static void main( String[] args ) throws Exception
     {
         if (args.length != 2) {
-            System.err.println("Usage: CountAllWords <input path> <output path>");
+            System.err.println("Usage: FindIDDriver <input path> <output path>");
             System.exit(-1);
         }
         Job job = new Job();
         job.setJarByClass(FindIDDriver.class);
-        job.setJobName("Count Occurrence of All Words");
+        job.setJobName("Find tweet ids of select words");
 
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
