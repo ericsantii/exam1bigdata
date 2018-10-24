@@ -24,5 +24,5 @@ schemastud = StructType([
 student_data_frame = spark.read.csv(
     "/user/studentsPR.csv", header=False, schema=schemastud)
 
-student_data_frame.join(school_data_frame, 'id').select(student_data_frame.id_estudiante).filter((school_data_frame.nivel_escuela == 'Superior') & (
+student_data_frame.join(school_data_frame, 'id').select(student_data_frame.id_estudiante).filter((school_data_frame.nivel_escuela == 'Superior') & (student_data_frame.sexo == 'M') & (
     (school_data_frame.ciudad == 'Ponce') | (school_data_frame.ciudad == 'San Juan'))).write.csv('/user/p3aresults')

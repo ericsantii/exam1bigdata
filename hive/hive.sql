@@ -18,7 +18,7 @@ group by ciudad,nivel;
 Exercise 3
 select count(*)
 from studentspr as S,escuelaspr as E
-where S.id=E.id and S.sexo = 'F'and E.ciudad = 'Ponce' and S.nivel = 'Superior';
+where S.id=E.id and S.sexo = 'F'and E.ciudad = 'Ponce' and E.nivel = 'Superior';
 
 Exercise 4
 select E.region_educativa, E.distrito_escolar, E.ciudad, count(*)
