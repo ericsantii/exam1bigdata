@@ -6,3 +6,4 @@ Tiene 7 columnas:
 4 - Nivel de la escuela
 5 - Sexo del estudiante (M o F)
 6 - Numero de indentificacion del estudiante
+
