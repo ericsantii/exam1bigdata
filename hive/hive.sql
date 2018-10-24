@@ -5,10 +5,10 @@ create table escuelaspr (region_educativa string, distrito_escolar string, ciuda
 create table studentspr (region_educativa string, distrito_escolar string, id int, nombre string, nivel string, sexo string,id_estudiante  int) row format delimited fields terminated by ',' stored as textfile;
 
 Exercise 1
-select region_educativa,ciudad, count(*)
+select E.region_educativa,E.ciudad, count(*)
 from studentspr as S, escuelaspr as E 
 where S.id=E.id
-group by S.region_educativa,E.ciudad;
+group by E.region_educativa,E.ciudad;
 
 Exercise 2
 select ciudad, nivel count(*)
@@ -18,11 +18,11 @@ group by ciudad,nivel;
 Exercise 3
 select count(*)
 from studentspr as S,escuelaspr as E
-where S.id=E.id and sexo = 'F'and ciudad = 'Ponce' and S.nivel = 'Superior'
+where S.id=E.id and S.sexo = 'F'and E.ciudad = 'Ponce' and S.nivel = 'Superior';
 
 Exercise 4
-select region_educativa, distrito_escolar, ciudad, count(*)
+select E.region_educativa, E.distrito_escolar, E.ciudad, count(*)
 from studentspr as S,escuelaspr as E
-where S.sexo = 'M'
-group by S.region_educativa, S.distrito_escolar, E.ciudad
+where S.id =E.id and S.sexo = 'M'
+group by E.region_educativa, E.distrito_escolar, E.ciudad
 
